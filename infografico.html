@@ -18,9 +18,15 @@
     .case-title { font-size:1.08rem; font-weight:700; color:#2BA02D;}
     .gallery-title {font-size:1.16rem; color:#19305A; font-weight:bold;}
     .gallery-box {margin:18px 0; display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-    .gallery-card {background:#f6ffd4; border-radius:14px; padding:11px 7px 10px 7px; text-align:center; cursor:pointer; box-shadow:0 2px 9px #C3FE4D18;}
-    .gallery-card img {width:100%; border-radius:9px; object-fit:cover; height:89px; background:#e3edfa;}
+    .gallery-card {background:#f6ffd4; border-radius:14px; padding:11px 7px 10px 7px; text-align:center; cursor:pointer; box-shadow:0 2px 9px #C3FE4D18; }
+    .gallery-card img {width:240px;height:160px;object-fit:cover;border-radius:9px;background:#e3edfa; display:block; margin:0 auto;}
     .gallery-title {margin:7px 0 0 0;}
+    .lightbox-overlay { display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(25,48,90,0.89); justify-content:center; align-items:center; z-index:9999;}
+    .lightbox-overlay.active { display:flex; }
+    .lightbox-content { background:white; border-radius:16px; padding:22px; max-width:96vw; max-height:92vh; box-shadow:0 8px 50px #19305A99; text-align:center; }
+    .lightbox-img { max-width:86vw; max-height:80vh; border-radius:17px; box-shadow:0 4px 34px #2BA02D48; margin-bottom:10px; }
+    .close-lightbox { font-size:2.3rem; font-weight:bold; color:#19305A; background:#C3FE4D; border-radius:50%; width:38px; height:38px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; border:none; margin:0 0 12px 0;}
+    .close-lightbox:hover { color:#fff; background:#2BA02D;}
     footer { width:100%; background:#f1f7fa; border-top:2px solid #e3edfa; display:flex; align-items:center; padding:18px 36px; margin-top:30px;}
     .footer-logo { height:42px; margin-right:18px; }
   </style>
@@ -54,7 +60,6 @@
     <li><b>Atualização e Tendências:</b> Capacite a equipe, monitore editais, participe de cursos, inove processos e busque parcerias de impacto.</li>
     <li><b>Impacto Tangível:</b> Estabeleça métricas, crie relatórios visuais, comunique resultados e compartilhe cases de sucesso.</li>
   </ol>
-
   <div class="section-title">Cases e Exemplos Reais</div>
   <div class="case-title">Diversificação de Fontes:</div>
   <ul>
@@ -69,32 +74,38 @@
     <li>Sistema de CRM integrado</li>
     <li>App móvel para doadores</li>
   </ul>
-
   <div class="section-title">Ferramentas Recomendadas</div>
   <b>Plataformas:</b> Kickante, Benfeitoria, Vakinha, JustGiving<br>
   <b>CRM:</b> Salesforce Nonprofit Cloud, Pipedrive, HubSpot, NeonCRM<br>
   <b>Storytelling:</b> Canva, Animaker, Instagram, YouTube<br>
   <b>Métricas:</b> Google Analytics, Facebook Insights, Dashboards personalizados
-
   <div class="section-title">Galeria CTB</div>
   <div class="gallery-box">
-    <div class="gallery-card"><img src="ctb1.jpg" alt="Time CTB jovem"/><div class="gallery-title">Time CTB jovem</div></div>
-    <div class="gallery-card"><img src="ctb2.jpg" alt="Equipe CTB"/><div class="gallery-title">Equipe CTB</div></div>
-    <div class="gallery-card"><img src="ctb3.jpg" alt="Intercâmbio"/><div class="gallery-title">intercâmbio</div></div>
-    <div class="gallery-card"><img src="ctb4.jpg" alt="Inclusão Social"/><div class="gallery-title">Inclusão Social</div></div>
-    <div class="gallery-card"><img src="ctb5.jpg" alt="Evento ODS"/><div class="gallery-title">Evento ODS</div></div>
-    <div class="gallery-card"><img src="ctb6.jpg" alt="Projetos Escolares"/><div class="gallery-title">Projetos Escolares</div></div>
-    <div class="gallery-card"><img src="ctb7.jpg" alt="Sustentabilidade"/><div class="gallery-title">Sustentabilidade</div></div>
-    <div class="gallery-card"><img src="ctb8.jpg" alt="Desenvolvimento"/><div class="gallery-title">Desenvolvimento</div></div>
-    <div class="gallery-card"><img src="ctb9.jpg" alt="Captação & Impacto"/><div class="gallery-title">Captação & Impacto</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb1.jpg','Treino Juvenil')"><img src="ctb1.jpg" alt="Treino Juvenil"/><div class="gallery-title">Treino Juvenil</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb2.jpg','Circuito Verde')"><img src="ctb2.jpg" alt="Circuito Verde"/><div class="gallery-title">Circuito Verde</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb3.jpg','Equipe CTB')"><img src="ctb3.jpg" alt="Equipe CTB"/><div class="gallery-title">Equipe CTB</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb4.jpg','Inclusão Social')"><img src="ctb4.jpg" alt="Inclusão Social"/><div class="gallery-title">Inclusão Social</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb5.jpg','Evento ODS')"><img src="ctb5.jpg" alt="Evento ODS"/><div class="gallery-title">Evento ODS</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb6.jpg','Projetos Escolares')"><img src="ctb6.jpg" alt="Projetos Escolares"/><div class="gallery-title">Projetos Escolares</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb7.jpg','Sustentabilidade')"><img src="ctb7.jpg" alt="Sustentabilidade"/><div class="gallery-title">Sustentabilidade</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb8.jpg','Desenvolvimento')"><img src="ctb8.jpg" alt="Desenvolvimento"/><div class="gallery-title">Desenvolvimento</div></div>
+    <div class="gallery-card" onclick="openLightbox('ctb9.jpg','Captação & Impacto')"><img src="ctb9.jpg" alt="Captação & Impacto"/><div class="gallery-title">Captação & Impacto</div></div>
   </div>
-
   <div class="section-title">Conclusão</div>
   <div class="blue-text">
     Ao seguir esses segredos práticos, as OSCs prosperam e ampliam o impacto social. Cada doador é parceiro na missão e cada história plantada é uma esperança para futuros resultados. O CTB atua como plataforma ESG incentivada na Bahia, promovendo práticas sustentáveis, inclusão, governança e parcerias estratégicas.<br><br>
     <b>Clube dos Tenistas da Bahia</b><br>
     <b>CNPJ:</b> 23.146.328/0001-16<br>
     <b>Email:</b> paulo@ctb-ba.com.br
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox-overlay" onclick="if(event.target.id==='lightbox'){closeLightbox();}">
+  <div class="lightbox-content">
+    <button class="close-lightbox" onclick="closeLightbox()" aria-label="Fechar">×</button>
+    <div class="gallery-title" id="lightbox-title"></div>
+    <img class="lightbox-img" id="lightbox-img" src="#" alt="Imagem ampliada"/>
   </div>
 </div>
 <footer>
@@ -109,5 +120,21 @@
     </span>
   </div>
 </footer>
+<script>
+  // Lightbox JS
+  function openLightbox(imgSrc, title) {
+    document.getElementById('lightbox-img').src = imgSrc;
+    document.getElementById('lightbox-title').innerText = title;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = "#";
+    document.getElementById('lightbox-title').innerText = "";
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
