@@ -9,21 +9,20 @@
     html { scroll-behavior: smooth; }
     body { font-family:'Montserrat',Arial,sans-serif; background:#F9FBFF; margin:0; color:#19305A;}
     header { display:flex; align-items:flex-start; justify-content:space-between; padding:44px 54px 28px 54px; background:#f1f7fa; }
-    .big-title { font-size:3rem; font-weight:800; color:#19305A; line-height:1.1; margin-bottom:4px; margin-top:0; letter-spacing:-1px; }
+    .big-title { font-size:3rem; font-weight:800; color:#19305A; line-height:1.1; margin-bottom:4px;}
     .header-right { text-align:right; min-width:160px; }
-    .club-name { font-size:1.35rem; font-weight:800; color:#2BA02D; margin-bottom:4px; margin-top:5px; text-shadow:0px 2px 14px #C3FE4D44;}
-    .ods-img { max-width:100px; margin-top:14px; border-radius:14px; box-shadow:0 1px 12px #19305A14;}
+    .club-name { font-size:1.35rem; font-weight:800; color:#2BA02D;}
+    .ods-img { max-width:100px; margin-top:14px; border-radius:14px; }
     .audio-player { width:320px; margin:0 auto 20px auto; display:block; background:#F6FFD4; border-radius:14px; box-shadow:0 2px 12px #19305A22; padding:10px 4px 8px 15px;}
     .infographic-main { display:flex; flex-direction:row; margin-top:10px; margin-bottom:32px; margin-left:4vw; margin-right:4vw; align-items:flex-start;}
-    .sidebar-img { flex:0 0 220px; padding:24px; background:#E8F5E9; border-radius:24px; display:flex; align-items:center; justify-content:center; margin-right:2vw; height:270px; box-shadow:0 2px 24px #C3FE4D40;}
+    .sidebar-img { flex:0 0 220px; padding:24px; background:#E8F5E9; border-radius:24px; display:flex; align-items:center; justify-content:center; margin-right:2vw; height:270px; }
     .sidebar-img img { max-width:180px; max-height:240px; border-radius:14px;}
-    .infographic-content { flex:2 1 700px; background:#e3edfa; border-radius:20px; padding:40px 38px; box-shadow:0 2px 24px #19305A22;}
+    .infographic-content { flex:2 1 700px; background:#e3edfa; border-radius:20px; padding:40px 38px;}
     .section-title { font-size:1.7rem; font-weight:700; color:#19305A; margin-bottom:16px; margin-top:32px;}
     .images-gallery { display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; margin-top:44px; margin-bottom:32px; }
-    .gallery-card { background:#f6ffd4; border-radius:16px; padding:14px 8px 13px 8px; box-shadow:0 5px 18px #C3FE4D19; text-align:center; cursor:pointer;}
-    .gallery-card img {width:100%; border-radius:9px; object-fit:cover; height:94px; margin-bottom:7px; background:#e3edfa;}
-    .gallery-title {font-size:1.18rem; color:#19305A; font-weight:700; margin-top:0; margin-bottom:0;}
-    /* ... mantenha os demais estilos e JS do seu infográfico original ... */
+    .gallery-card { background:#f6ffd4; border-radius:16px; padding:14px 8px 13px 8px; text-align:center; cursor:pointer;}
+    .gallery-card img {width:100%; border-radius:9px; object-fit:cover; height:94px; background:#e3edfa;}
+    .gallery-title {font-size:1.18rem; color:#19305A; font-weight:700; margin-top:0;}
     footer { width:100%; background:#f1f7fa; border-top:2px solid #e3edfa; display:flex; align-items:center; padding:18px 36px; margin-top:48px;}
     .footer-logo { height:48px; margin-right:22px; }
   </style>
@@ -48,20 +47,33 @@
     <img src="ctb.png" alt="Clube dos Tenistas - Logo estilizada">
   </aside>
   <section class="infographic-content">
-    <!-- ... aqui permanece todo seu conteúdo original do infográfico ... -->
     <div class="box-highlight">
       <h2>Missão Azul do CTB</h2>
       <div class="blue-text">
         O <span class="green-detail">Clube dos Tenistas da Bahia</span> é referência em práticas esportivas, inclusão social e sustentabilidade, conectando pessoas e comunidades através do tênis e projetos de impacto sustentável.
       </div>
     </div>
-    <!-- ... demais seções e galeria etc ... -->
+    <div class="section-title">A Importância da Captação de Recursos</div>
+    <div class="blue-text">
+      As OSCs abraçam causas diversas e muitas vezes enfrentam desafios financeiros. Captação de recursos é essencial para manter o impacto e fortalecer ações na comunidade. A missão é o guia, a diversidade e o engajamento ampliam resultados e a sustentabilidade.<br>
+      <strong>Segredos práticos para prosperar:</strong>
+    </div>
+    <!-- aqui segue todas as outras seções originais do infográfico até a galeria -->
+    <div class="section-title">Galeria CTB</div>
+    <div class="images-gallery">
+      <div class="gallery-card" tabindex="0" data-img="ctb1.jpg" data-title="Treino Juvenil"><img src="ctb1.jpg" alt="Treino Juvenil"><div class="gallery-title">Treino Juvenil</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb2.jpg" data-title="Circuito Verde"><img src="ctb2.jpg" alt="Circuito Verde"><div class="gallery-title">Circuito Verde</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb3.jpg" data-title="Equipe CTB"><img src="ctb3.jpg" alt="Equipe CTB"><div class="gallery-title">Equipe CTB</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb4.jpg" data-title="Inclusão Social"><img src="ctb4.jpg" alt="Inclusão Social"><div class="gallery-title">Inclusão Social</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb5.jpg" data-title="Evento ODS"><img src="ctb5.jpg" alt="Evento ODS"><div class="gallery-title">Evento ODS</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb6.jpg" data-title="Projetos Escolares"><img src="ctb6.jpg" alt="Projetos Escolares"><div class="gallery-title">Projetos Escolares</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb7.jpg" data-title="Sustentabilidade"><img src="ctb7.jpg" alt="Sustentabilidade"><div class="gallery-title">Sustentabilidade</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb8.jpg" data-title="Desenvolvimento"><img src="ctb8.jpg" alt="Desenvolvimento"><div class="gallery-title">Desenvolvimento</div></div>
+      <div class="gallery-card" tabindex="0" data-img="ctb9.jpg" data-title="Captação & Impacto"><img src="ctb9.jpg" alt="Captação & Impacto"><div class="gallery-title">Captação & Impacto</div></div>
+    </div>
+    <!-- lightbox + resto dos scripts de interação -->
   </section>
 </div>
-<div class="bottom-box">
-  <!-- ... galeria CTB etc ... -->
-</div>
-<!-- Lightbox + JS... -->
 <footer>
   <img src="ctb2.png" class="footer-logo" alt="Clube dos Tenistas Bahia">
   <div style="display:flex; flex-direction:column;">
@@ -75,7 +87,25 @@
   </div>
 </footer>
 <script>
-  /* JS da galeria/lightbox - mantenha o original */
+  // Lightbox/galeria JS igual anterior
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const lightbox = document.createElement('div');
+  lightbox.classList.add('lightbox-overlay');
+  lightbox.innerHTML = `
+    <div class='lightbox-img-box'>
+      <button class='close-lightbox' aria-label='Fechar'>×</button>
+      <span class='lightbox-caption'></span>
+      <img class='lightbox-img' src='#' alt='Imagem ampliada'/>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  function openLightbox(card){ lightboxImg.src = card.getAttribute('data-img'); lightboxCaption.textContent = card.getAttribute('data-title'); lightbox.classList.add('active'); }
+  function closeLightbox(){ lightbox.classList.remove('active'); lightboxImg.src="#"; lightboxCaption.textContent=""; }
+  galleryCards.forEach(card => { card.addEventListener('mouseenter', () => openLightbox(card)); card.addEventListener('focus', () => openLightbox(card)); });
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox || e.target.classList.contains('close-lightbox')) closeLightbox(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
