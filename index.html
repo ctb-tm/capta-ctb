@@ -1,78 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube dos Tenistas da Bahia</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:800,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Clube dos Tenistas da Bahia</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:800,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family:'Montserrat',Arial,sans-serif; background:#F9FBFF; margin:0; color:#19305A; }
+    header { display:flex; align-items:center; justify-content:space-between; background:#f1f7fa; padding:32px 24px 18px 24px; }
+    .header-center { flex:1; text-align:center; }
+    .logo-ctb { display:block; margin:0 auto 10px auto; max-width:120px; }
+    .btn-infografico { background:#DC2626; color:white; border:none; padding:12px 20px; border-radius:26px; font-family:'Montserrat',Arial,sans-serif; font-weight:700; font-size:0.98rem; cursor:pointer; transition:all 0.3s; box-shadow:0 3px 10px rgba(220,38,38,0.17); }
+    .btn-infografico:hover { background:#B91C1C; }
+    .main-title { font-size:2.1rem; font-weight:800; color:#19305A; margin:0; }
+    .main-content { max-width:780px; margin:40px auto; text-align:center; }
+    footer { width:100%; background:#f1f7fa; border-top:2px solid #e3edfa; display:flex; align-items:center; padding:18px 36px; margin-top:48px; }
+    .footer-logo { height:48px; margin-right:22px; }
+  </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-content">
-            <div class="header-left">
-                <h1 class="main-title">Clube dos Tenistas da Bahia</h1>
-                <p class="subtitle">Conectando pessoas através do tênis e projetos sociais sustentáveis</p>
-            </div>
-            <div class="header-right">
-                <button id="openInfographic" class="btn-infographic">
-                    Abrir Infográfico
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main class="main-content">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h2>Transformando vidas através do esporte</h2>
-                <p>O Clube dos Tenistas da Bahia é uma referência em práticas esportivas, inclusão social e sustentabilidade. Nossa missão é conectar pessoas e comunidades através do tênis e projetos de impacto sustentável.</p>
-            </div>
-        </section>
-
-        <section class="features-section">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎾</div>
-                    <h3>Inclusão Social</h3>
-                    <p>Programas que promovem a integração e o desenvolvimento social através do tênis.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Sustentabilidade</h3>
-                    <p>Práticas sustentáveis que respeitam o meio ambiente e promovem consciência ecológica.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Excelência Esportiva</h3>
-                    <p>Formação de atletas e desenvolvimento técnico de alto nível no tênis.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Comunidade</h3>
-                    <p>Fortalecimento dos laços comunitários através do esporte e projetos sociais.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Conheça nosso Guia Completo</h2>
-                <p>Descubra estratégias eficazes de captação de recursos e impacto social desenvolvidas pelo CTB.</p>
-                <button id="openInfographicCTA" class="btn-cta">
-                    Ver Infográfico Completo
-                </button>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Clube dos Tenistas da Bahia. Todos os direitos reservados.</p>
-            <p>Comprometidos com os Objetivos de Desenvolvimento Sustentável (ODS)</p>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
+  <header>
+    <div class="header-center">
+      <img src="ctb.png" class="logo-ctb" alt="Logo CTB">
+      <h1 class="main-title">Clube dos Tenistas da Bahia</h1>
+    </div>
+    <div>
+      <button class="btn-infografico" onclick="window.location.href='infografico.html'">📊 Abrir Infográfico</button>
+    </div>
+  </header>
+  <main class="main-content">
+    <h2>Transformando vidas através do esporte</h2>
+    <p>O Clube dos Tenistas da Bahia é referência em práticas esportivas, inclusão social e sustentabilidade. Nossa missão é conectar pessoas e comunidades através do tênis e projetos de impacto sustentável.</p>
+    <!-- Aqui pode inserir mais conteúdo institucional se desejar -->
+  </main>
+  <footer>
+    <img src="ctb2.png" class="footer-logo" alt="Clube dos Tenistas Bahia">
+    <div style="display:flex; flex-direction:column;">
+      <span style="font-weight:700; color:#19305A; font-size:1.05rem;">
+        Clube dos Tenistas da Bahia<br>
+        <span style="font-weight:400;">CNPJ 23.146.328/0001-16</span>
+      </span>
+      <span style="color:#19305A; font-size:0.97rem; margin-top:3px;">
+        Contato: <a href="mailto:paulo@ctb-ba.com.br" style="color:#2BA02D;">paulo@ctb-ba.com.br</a>
+      </span>
+    </div>
+  </footer>
 </body>
 </html>
